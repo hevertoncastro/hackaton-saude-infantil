@@ -1,0 +1,50 @@
+.o-feedback {
+  text-align: center;
+
+  &.danger {
+    .o-feedback__text {
+      &:before {
+        @include icon(cancel);
+      }
+    }
+  }
+
+  &.warning {
+    .o-feedback__text {
+      &:before {
+        @include icon(danger);
+      }
+    }
+  }
+
+  &.success {
+    .o-feedback__text {
+      color: $color-success;
+      &:before {
+        @include icon(done);
+        color: $color-success;
+      }
+    }
+  }
+}
+
+.o-feedback__text {
+  margin: 0;
+  font-weight: $fw-semi-bold;
+  font-size: 20px;
+
+  &:before {
+    @include icon(done);
+    display: inline-block;
+    font-size: 24px;
+    color: $color-white;
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+}
+
+@include responsive(mobile) {
+  .o-feedback {
+    padding: 20px 25px;
+  }
+}

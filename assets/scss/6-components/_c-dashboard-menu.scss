@@ -1,0 +1,150 @@
+.c-dashboard-menu {
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.c-dashboard-menu__item {
+  list-style: none;
+  width: calc(50% - 8px);
+  margin-bottom: 16px;
+
+  &.full {
+    width: 100%;
+  }
+}
+
+.c-dashboard-menu__link {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  color: $color-theme-soft;
+  font-weight: $fw-bold;
+  text-decoration: none;
+
+  &:before {
+    font-size: 24px;
+    color: $color-theme-soft;
+    margin-right: 12px;
+    width: 30px;
+    text-align: center;
+  }
+
+  &.go {
+    &:before {
+      content: "";
+      display: none;
+    }
+
+    &:after {
+      @include icon(arrow);
+      font-size: 12px;
+      color: $color-theme-soft;
+      width: 30px;
+      text-align: center;
+      transform: rotate(-90deg) translateY(-50%);
+      position: absolute;
+      right: 24px;
+      top: 50%;
+      line-height: 1;
+      height: 0px;
+    }
+  }
+
+  &.profile {
+    &:before {
+      @include icon(profile);
+    }
+  }
+  &.wallet {
+    &:before {
+      @include icon(wallet);
+    }
+  }
+  &.calendar {
+    &:before {
+      @include icon(calendar);
+    }
+  }
+  &.target {
+    &:before {
+      @include icon(target);
+    }
+  }
+  &.news {
+    &:before {
+      @include icon(news);
+    }
+  }
+  &.play {
+    &:before {
+      @include icon(play);
+    }
+  }
+  &.clinic {
+    &:before {
+      @include icon(clinic);
+      font-size: 30px;
+    }
+  }
+  &.exams {
+    &:before {
+      @include icon(exams);
+      font-size: 30px;
+    }
+  }
+  &.staging {
+    &:before {
+      @include icon(staging);
+      font-size: 30px;
+    }
+  }
+  &.diagnosis {
+    &:before {
+      @include icon(diagnosis);
+      font-size: 23px;
+    }
+  }
+  &.therapeutic {
+    &:before {
+      @include icon(therapeutic);
+      font-size: 30px;
+    }
+  }
+  &.accompaniment {
+    &:before {
+      @include icon(accompaniment);
+      font-size: 26px;
+    }
+  }
+  &.complications {
+    &:before {
+      @include icon(complications);
+      font-size: 30px;
+    }
+  }
+  &.discharge {
+    &:before {
+      @include icon(discharge);
+      font-size: 25px;
+    }
+  }
+}
+
+.c-dashboard-menu__icons {
+  display: flex;
+
+  .o-button {
+    margin-right: 16px;
+  }
+}
+
+@include responsive(mobile) {
+  .c-dashboard-menu__item {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+}

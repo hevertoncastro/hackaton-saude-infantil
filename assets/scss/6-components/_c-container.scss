@@ -1,0 +1,45 @@
+.c-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  width: 100%;
+  transform: translateX(0);
+  transition: transform 180ms ease-in;
+
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.50196);
+    z-index: $zindex-modal-backdrop;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms ease-in;
+  }
+
+  &.c-container--is-covered {
+    &:before {
+      visibility: visible;
+      opacity: 1;
+      transition: opacity 300ms ease-out;
+    }
+
+    .s-content__holder,
+    .c-menu,
+    .c-header__title {
+      filter: blur(2px);
+    }
+  }
+
+  &.opened-menu {
+    transform: translateX(208px);
+    transition: transform 280ms ease-in;
+
+    .v--modal-overlay {
+      left: -208px;
+    }
+  }
+}

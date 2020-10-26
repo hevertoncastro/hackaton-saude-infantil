@@ -1,0 +1,15 @@
+.c-categories {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.c-categories__item  {
+  margin-top: 8px;
+  margin-bottom: 8px;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+}

@@ -1,0 +1,299 @@
+.o-button__holder {
+  display: flex;
+  justify-content: flex-end;
+  margin: 24px 0;
+
+  &.no-margin {
+    margin: 0;
+  }
+}
+
+.o-button {
+  display: inline-block;
+  border-radius: 5px;
+  border: none;
+  padding: 11px 36px;
+  min-height: 40px;
+  cursor: pointer;
+  color: inherit;
+  background: transparent;
+  outline: none;
+  font: inherit;
+  transition: opacity 300ms ease;
+  text-decoration: none;
+
+  &.small {
+    padding: 8px 24px;
+  }
+
+  &.large {
+    padding: 11px 54px;
+  }
+
+  span {
+    color: $color-gray;
+    font-size: 14px;
+    font-weight: $fw-bold;
+  }
+
+  &:active,
+  &:hover {
+    opacity: 0.7;
+    transition: opacity 300ms ease;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.7;
+  }
+
+  &.main {
+    background: $gradient-main;
+    border-color: $color-main-button;
+    color: $color-main-button;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  &.success {
+    background: $gradient-success;
+    border-color: $color-main-button;
+    color: $color-main-button;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  &.muted {
+    background: transparent;
+    border-color: $color-gray;
+    color: $color-gray;
+
+    span {
+      color: $color-gray;
+    }
+  }
+
+  &.highlight {
+    background: $gradient-highlight;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  &.danger {
+    border-color: $color-danger-button;
+    color: $color-danger-button;
+  }
+
+  &.warning {
+    border-color: $color-warning-button;
+    color: $color-warning-button;
+  }
+
+  &.green {
+    background-color: transparent;
+    color: $color-success !important;
+
+    span {
+      color: $color-success !important;
+    }
+  }
+
+  &.orange {
+    background-color: $color-warning;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  &.blue {
+    background-color: $color-theme;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  &.bordered {
+    background: transparent;
+    border-style: solid;
+    border-width: 1px;
+
+    span {
+      color: inherit;
+    }
+  }
+
+  &.wide {
+    display: block;
+    width: 100%;
+  }
+
+  &.add-button {
+    position: relative;
+    padding: 0;
+
+    span {
+      color: $color-main-button;
+    }
+
+    &:after {
+      @include icon(more);
+      font-size: 12px;
+      color: $color-main-button;
+      background-color: #fff;
+      padding: 12px;
+      border-radius: 50%;
+      margin-left: 10px;
+      box-shadow: 0 1px 20px $color-button-shaddow;
+    }
+  }
+
+  &.icon {
+    position: relative;
+    display: flex;
+    color: inherit;
+    font-size: 16px;
+    font-weight: $fw-semi-bold;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    min-height: 32px;
+
+    &.left {
+      justify-content: flex-start;
+      padding-left: 0;
+    }
+
+    &.small {
+      font-size: 14px;
+      min-height: 26px;
+
+      &:before {
+        font-size: 12px;
+        margin-right: 4px;
+      }
+    }
+
+    &.no-padding {
+      padding: 0;
+    }
+
+    &.danger {
+      color: $color-danger;
+    }
+
+    &.success {
+      color: $color-success;
+    }
+
+    &.gray {
+      color: $color-gray;
+    }
+
+    &:before {
+      content: "";
+      font-size: 18px;
+      color: inherit;
+      margin-right: 8px;
+    }
+
+    &.wallet {
+      &:before {
+        @include icon(wallet);
+      }
+    }
+
+    &.message {
+      &:before {
+        @include icon(message);
+      }
+    }
+
+    &.audio {
+      &:before {
+        @include icon(audio);
+      }
+    }
+
+    &.visible {
+      &:before {
+        @include icon(visible);
+      }
+    }
+
+    &.invisible {
+      &:before {
+        @include icon(invisible);
+        font-size: 14px;
+      }
+    }
+  }
+
+  &.loading {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    opacity: 0.7;
+    pointer-events: none;
+    touch-action: none;
+
+    span {
+      font-size: 0;
+      width: 34px;
+      height: 34px;
+      min-width: 120px;
+
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        height: 34px;
+        width: 34px;
+        background: url('../images/loader.svg') center center;
+        background-size: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
+.o-button__card-tag {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-color: $color-strong-success;
+  border: 0;
+  color: $color-white;
+  padding: 5px 15px;
+  border-radius: 5px 0 5px 0;
+  font-weight: $fw-regular;
+  font-size: 14px;
+  cursor: pointer;
+  outline: none;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: right bottom;
+  transition: all 100ms ease-out;
+
+  &.active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 100ms ease-in;
+  }
+}
+
+@include responsive(mobile) {
+  .o-button {
+    min-height: 48px;
+  }
+}

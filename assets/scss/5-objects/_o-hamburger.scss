@@ -1,0 +1,32 @@
+.o-hamburger {
+  &.hamburger--arrow {
+    position: absolute;
+    display: none;
+    left: 16px;
+    outline: none;
+    z-index: $zindex-above;
+  }
+}
+
+@include responsive(mobile) {
+  .o-hamburger {
+    &.hamburger--arrow {
+      display: block;
+      position: fixed;
+      border-radius: 4px;
+    }
+  }
+}
+
+@include responsive(non-mobile) {
+  .o-hamburger {
+    &.hamburger--arrow {
+      display: block;
+
+      &.is-active {
+        display: none;
+      }
+    }
+  }
+}
+

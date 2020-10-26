@@ -1,0 +1,40 @@
+.c-timeline__holder {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-timeline__item {
+  position: relative;
+  padding-left: 20px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 4px;
+    width: 8px;
+    height: 8px;
+    background-color: $color-softgray;
+    border-radius: 50%;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 20px;
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 5px;
+      width: 1px;
+      height: 100%;
+      background-color: $color-softgray;
+    }
+  }
+}
+
+.c-timeline__tooltip-item {
+  position: relative;
+  display: inline-block;
+}

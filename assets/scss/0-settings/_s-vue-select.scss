@@ -1,0 +1,83 @@
+.style-chooser .vs__search::placeholder,
+.style-chooser .vs__dropdown-toggle,
+.style-chooser .vs__dropdown-menu {
+  background-color: #ffffff;
+  border: none;
+  color: #394066;
+}
+
+.vs__dropdown-toggle {
+  background-color: #ffffff;
+  color: #AAAAAA;
+  height: 40px;
+}
+
+.vs__search {
+  font-size: 14px;
+  color: #AAAAAA;
+  white-space: nowrap;
+  display: flex;
+  flex: 0;
+}
+
+.vs__dropdown-option {
+  font-size: 14px;
+  font-weight: 600;
+  color: #AAAAAA;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.3;
+  padding: 8px;
+}
+
+.vs__dropdown-option--highlight,
+.vs__dropdown-option:hover,
+.vs__dropdown-option:visited,
+.vs__dropdown-option:active {
+  background-color: #EE5261;
+  color: #FFFFFF;
+}
+
+.vs__selected {
+  font-size: 14px;
+  color: #AAAAAA;
+  white-space: nowrap;
+  padding: 6px 10px;
+  width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  flex: 1;
+  margin: 0;
+  height: 40px;
+}
+
+.vs__selected-options {
+  font-size: 14px;
+  color: #AAAAAA;
+  overflow: hidden;
+  height: 40px;
+}
+
+.style-chooser .vs__clear,
+.style-chooser .vs__open-indicator {
+  fill: #394066;
+}
+
+.vs__actions {
+  padding: 4px 16px 0 3px;
+  cursor: pointer;
+}
+
+.vs__clear {
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: 767px) {
+  .vs__dropdown-toggle,
+  .vs__selected,
+  .vs__selected-options {
+    height: 48px;
+  }
+}

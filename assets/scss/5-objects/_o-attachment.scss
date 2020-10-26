@@ -1,0 +1,35 @@
+.o-attachment {
+  display: inline-flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  box-shadow: 4px 4px 4px $color-card-shaddow;
+  border-radius: 4px;
+  padding: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  min-width: 210px;
+
+  .o-attachment__delete {
+    display: flex;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    padding: 4px;
+    color: $color-danger;
+    font-size: 14px;
+
+    &:before {
+      @include icon(delete);
+      color: $color-danger;
+      font-size: 20px;
+      margin-right: 4px;
+    }
+  }
+}
+
+@include responsive(mobile) {
+  .o-attachment {
+    min-width: 230px;
+  }
+}

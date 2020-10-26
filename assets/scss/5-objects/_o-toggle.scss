@@ -1,0 +1,65 @@
+.o-toggle {
+  display: inline-block;
+
+  &.readonly {
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+}
+
+.o-toggle__checkbox {
+  display: none;
+
+  &:disabled,
+  &:disabled + .o-toggle__label,
+  &:disabled + .toggle-track {
+    cursor: not-allowed !important;
+  }
+}
+
+.o-toggle__label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: $color-darkgray;
+  font-size: 16px;
+  font-weight: $fw-semi-bold;
+
+  .toggle-track {
+    display:block;
+    height: 10px;
+    width: 25px;
+    margin-right: 8px;
+    margin-top: 2px;
+    background-color: rgba($color-lightgray, 0.7);
+    border-radius: 20px;
+    position: relative;
+    border: 1px solid transparent;
+    transition: background-color 120ms ease-in;
+
+    &:before{
+      content:'';
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+      background-color: $color-softgray;
+      border-radius: 20px;
+      position: absolute;
+      top: -50%;
+      left: 0;
+      transform: translateX(0);
+      transition: all 120ms ease-in;
+      box-shadow: 0 2px 2px $color-card-shaddow;
+    }
+  }
+}
+
+.o-toggle__checkbox:checked + .o-toggle__label .toggle-track {
+  background-color: $color-toggle-track;
+
+  &:before{
+    background-color: $color-toggle-button;
+    transform: translateX(80%);
+    top: -50%;
+  }
+}

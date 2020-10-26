@@ -1,0 +1,10 @@
+node_modules
+.DS_Store
+.env
+.nuxt
+dist
+yarn.lock
+package-lock.json
+.nuxt/router.js
+.nuxt/routes.json
+.nuxt/utils.js

@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "icons";
+  src: url("../fonts/icons.eot?n1cpfm");
+  src:
+    url("../fonts/icons.eot?n1cpfm#iefix") format("embedded-opentype"),
+    url("../fonts/icons.ttf?n1cpfm") format("truetype"),
+    url("../fonts/icons.woff?n1cpfm") format("woff"),
+    url("../fonts/icons.svg?n1cpfm#icons") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+$style-icons-map: (
+  audio: "\e92c",
+  message: "\e92b",
+  brainstorm: "\e92a",
+  statistical: "\e929",
+  discharge: "\e91e",
+  complications: "\e91f",
+  accompaniment: "\e920",
+  therapeutic: "\e921",
+  diagnosis: "\e922",
+  staging: "\e923",
+  exams: "\e924",
+  clinic: "\e925",
+  time: "\e926",
+  qrcode: "\e927",
+  send: "\e928",
+  home: "\e91d",
+  play: "\e919",
+  news: "\e91a",
+  target: "\e91b",
+  calendar: "\e91c",
+  dots: "\e912",
+  invisible: "\e909",
+  visible: "\e90f",
+  search: "\e900",
+  question: "\e918",
+  copy: "\e90a",
+  download: "\e917",
+  upload: "\e915",
+  photo: "\e916",
+  close: "\e914",
+  back-arrow: "\e913",
+  delete: "\e911",
+  attachment: "\e910",
+  barcode: "\e90d",
+  credit: "\e90e",
+  done: "\e930",
+  danger: "\e90c",
+  cancel: "\e90b",
+  arrow: "\e908",
+  context: "\e901",
+  more: "\e902",
+  edit: "\e903",
+  logoff: "\e904",
+  support: "\e905",
+  wallet: "\e906",
+  profile: "\e907"
+);
+
+@mixin icon($icon) {
+  content: map-get($style-icons-map, $icon);
+  font-family: "icons";
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}

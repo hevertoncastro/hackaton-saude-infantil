@@ -1,0 +1,78 @@
+.c-share-profile {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 24px 0;
+}
+
+.c-share-profile__holder {
+  position: relative;
+
+  .c-share-profile__close {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    background: transparent;
+    border: 0;
+    font-size: 0;
+    cursor: pointer;
+
+    &:before {
+      @include icon(close);
+      font-size: 24px;
+      color: $color-gray;
+    }
+  }
+}
+
+.c-share-profile__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-share-profile__action {
+  display: flex;
+  justify-content: center;
+
+  .multiselect__tags {
+    min-width: 172px;
+  }
+}
+
+.c-share-profile__icon {
+  width: 56px;
+  height: 56px;
+  margin: 16px 0;
+
+  &:before {
+    content: "";
+    font-size: 52px;
+    color: $color-theme-dark;
+  }
+
+  &.send {
+    &:before {
+      @include icon(send);
+    }
+  }
+  &.qrcode {
+    &:before {
+      @include icon(qrcode);
+    }
+  }
+  &.time {
+    &:before {
+      @include icon(time);
+    }
+  }
+}
+
+@include responsive(mobile) {
+  .c-share-profile {
+    flex-direction: column;
+  }
+}
+

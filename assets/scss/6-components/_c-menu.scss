@@ -1,0 +1,157 @@
+.c-menu__holder {
+  padding: 0;
+}
+
+.c-menu__item {
+  list-style: none;
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.c-menu__link {
+  position: relative;
+  text-align: left;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: $fw-semi-bold;
+  text-decoration: none;
+  color: $color-menu-link;
+  padding-left: 24px;
+  width: 100%;
+  transition: color 300ms ease;
+  z-index: 1;
+
+  &:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-right: 8px;
+    color: $color-white;
+    font-size: 24px;
+    transition: color 300ms ease;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 80%;
+    height: 100%;
+    background-color: $color-white;
+    border-radius: 0 25px 25px 0;
+    transform: translateX(-100%);
+    transition: transform 180ms ease-in-out;
+    z-index: -1;
+  }
+
+  &.active,
+  &:hover,
+  &:active {
+    transition: color 300ms ease;
+    color: $color-theme-dark;
+
+    &:before {
+      transition: color 300ms ease;
+      color: $color-theme-dark;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 80%;
+      height: 100%;
+      background-color: $color-white;
+      border-radius: 0 25px 25px 0;
+      transform: translateX(0);
+    }
+  }
+
+  &.more {
+    &:before {
+      @include icon(more);
+    }
+  }
+
+  &.search {
+    &:before {
+      @include icon(search);
+    }
+  }
+
+  &.basket {
+    &:before {
+      @include icon(basket);
+    }
+  }
+
+  &.context {
+    &:before {
+      @include icon(context);
+    }
+  }
+
+  &.more {
+    &:before {
+      @include icon(more);
+    }
+  }
+
+  &.edit {
+    &:before {
+      @include icon(edit);
+    }
+  }
+
+  &.logoff {
+    &:before {
+      @include icon(logoff);
+    }
+  }
+
+  &.support {
+    &:before {
+      @include icon(support);
+    }
+  }
+
+  &.wallet {
+    &:before {
+      @include icon(wallet);
+    }
+  }
+
+  &.profile {
+    &:before {
+      @include icon(profile);
+    }
+  }
+
+  &.home {
+    &:before {
+      @include icon(home);
+    }
+  }
+
+  &.statistical {
+    &:before {
+      @include icon(statistical);
+    }
+  }
+
+  &.brainstorm {
+    &:before {
+      @include icon(brainstorm);
+    }
+  }
+}
+
+.c-menu__text {
+  display: inline-block;
+}

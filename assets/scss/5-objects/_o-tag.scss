@@ -1,0 +1,35 @@
+.o-tag {
+  display: inline-block;
+  color: $color-darkgray;
+  background-color: gray;
+  border-radius: 14px;
+
+  &.danger {
+    background-color: rgba($color-light-danger, 0.2);
+  }
+
+  &.success {
+    background-color: rgba($color-light-success, 0.2);
+  }
+
+  &.bordered {
+    background-color: transparent;
+    border: 1px solid ;
+  }
+}
+
+.o-tag__link,
+.o-tag__text {
+  display: block;
+  padding: 4px 24px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: $fw-semi-bold;
+  text-decoration: none;
+  color: rgba($color-black, 0.5);
+  border-radius: 14px;
+}
+
+.o-tag__text {
+  color: $color-darkgray;
+}

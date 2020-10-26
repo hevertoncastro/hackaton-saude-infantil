@@ -1,0 +1,191 @@
+.c-accordion {
+  position: relative;
+}
+
+.c-accordion__label {
+  cursor: pointer;
+
+  &:after {
+    @include icon(arrow);
+    display: inline-block;
+    font-size: 8px;
+    vertical-align: middle;
+    margin-left: 8px;
+    color: $color-black;
+    transition: transform 150ms ease;
+    transform: rotate(45deg) translateY(0);
+  }
+}
+
+.c-accordion__item-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 490px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.c-accordion {
+  &.admin {
+    .c-accordion__checkbox {
+      & ~ .c-accordion__amount {
+        margin-right: 24px;
+      }
+    }
+  }
+}
+
+.c-accordion__checkbox {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+
+  & ~ .c-accordion__content {
+    transform-origin: center top;
+    height: 0;
+    overflow: hidden;
+  }
+
+  & ~ .c-accordion__support {
+    position: absolute;
+    text-decoration: none;
+    right: 0;
+    top: 52px;
+    display: none;
+
+    &:before {
+      @include icon(message);
+      display: inline-block;
+      margin-right: 6px;
+      font-size: 24px;
+      color: $color-black;
+      vertical-align: middle;
+    }
+  }
+
+  & ~ .c-accordion__amount {
+    font-size: 18px;
+  }
+
+  & ~ .c-accordion__link {
+    display: none;
+    margin: 4px 0;
+  }
+
+  &:checked ~ .c-accordion__link {
+    display: block;
+  }
+
+  &:checked ~ .c-accordion__amount {
+    display: none;
+  }
+
+  &:checked ~ .c-accordion__content {
+    height: auto;
+    overflow: visible;
+  }
+
+  &:checked ~ .c-accordion__support {
+    display: block;
+  }
+
+  &:checked ~ .c-accordion__status {
+    .c-accordion__cta-button {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: $zindex-above;
+    }
+  }
+
+  & + .c-accordion__label {
+    &:after {
+      transform: rotate(360deg)
+    }
+  }
+
+  &:checked + .c-accordion__label {
+    &:after {
+      transform: rotate(180deg) translateY(2px);
+      transition: transform 150ms ease;
+    }
+  }
+}
+
+.c-accordion__status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@include responsive(mobile) {
+  .c-accordion__checkbox {
+    &:checked ~ .c-accordion__content {
+      padding-bottom: 50px;
+
+      &.cta {
+        padding-bottom: 120px;
+      }
+    }
+
+    & ~ .c-accordion__support {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      top: unset;
+    }
+
+    &:checked ~ .c-accordion__status {
+      .c-accordion__cta-button {
+        position: absolute;
+        bottom: 50px;
+        right: unset;
+        left: 0;
+        z-index: $zindex-above;
+      }
+    }
+
+    &:checked ~ .c-accordion__link {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 14px;
+    }
+  }
+
+  .c-accordion__label {
+    &::after {
+      position: absolute;
+      top: 8px;
+      right: 0;
+    }
+  }
+
+  .c-accordion__amount {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    &.o-text {
+      font-size: 14px;
+    }
+  }
+
+  .c-accordion__item-text {
+    white-space: normal;
+    overflow: hidden;
+    max-width: 490px;
+  }
+
+  .c-accordion__status {
+    &.pending {
+      align-items: flex-start;
+      flex-direction: column;
+
+      .c-accordion__cta-button {
+        margin-top: 20px;
+      }
+    }
+  }
+}

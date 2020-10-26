@@ -1,0 +1,26 @@
+$num: 0;
+
+.o-shimmer {
+  display: inline-block;
+  animation : shimmer 2s infinite linear;
+  background: $shimmer-gradient;
+  background-size: 1000px 100%;
+  border-radius: 4px;
+  color: transparent !important;
+  width: 100px;
+  height: 1.2rem;
+  margin: 0;
+
+  &.shimmer-block {
+    display: block;
+  }
+
+  @while $num < 550 {
+    &.shimmer-#{$num} {
+      width: #{$num}px;
+    }
+    $num: $num + 25;
+  }
+}
+
+

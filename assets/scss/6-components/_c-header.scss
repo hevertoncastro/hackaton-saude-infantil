@@ -1,0 +1,60 @@
+.c-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: $color-header-bg;
+  height: 96px;
+  margin-bottom: 45px;
+  width: 100%;
+  transition: height cubic-bezier(0.19, 1, 0.22, 1) 250ms;
+
+  &.is-sticky {
+    position: fixed;
+    top: 0;
+    z-index: $zindex-sticky;
+    height: 46px;
+    box-shadow: 4px 4px 16px $color-card-shaddow;
+    transition: height cubic-bezier(0.19, 1, 0.22, 1) 250ms;
+
+    .c-header__title {
+      font-size: 16px;
+      transition: font-size cubic-bezier(0.19, 1, 0.22, 1) 250ms;
+    }
+  }
+}
+
+.c-header__title {
+  font-size: 18px;
+  line-height: 19px;
+  font-weight: $fw-regular;
+  text-align: center;
+  margin: 0;
+  opacity: 1;
+  transition: opacity 200ms cubic-bezier(0.19, 1, 0.22, 1);
+  transition-delay: 100ms;
+  transition: font-size cubic-bezier(0.19, 1, 0.22, 1) 250ms;
+}
+
+.opened-menu {
+  .c-header {
+    &.is-sticky {
+      .o-logo {
+        margin-left: -209px;
+      }
+    }
+  }
+}
+
+@include responsive(mobile) {
+  .c-header__title {
+    padding: 0 72px;
+  }
+
+  .opened-menu {
+    .c-header__title {
+      opacity: 0;
+      transition: opacity 80ms ease-in;
+    }
+  }
+}

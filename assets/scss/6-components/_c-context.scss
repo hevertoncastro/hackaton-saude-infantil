@@ -1,0 +1,101 @@
+.c-context {
+  position: absolute;
+  top: 20px;
+  right: 5px;
+  cursor: pointer;
+  display: inline-block;
+  z-index: $zindex-above;
+}
+
+.c-context__button {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 21px;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  cursor: pointer;
+
+  .c-context__checkbox {
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+
+    &:checked + .c-context__menu {
+      opacity: 1;
+      transform: scale(1);
+      transition: all 150ms ease-out;
+    }
+  }
+
+  &:before {
+    @include icon(dots);
+    position: absolute;
+    top: 0;
+    font-size: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $color-gray;
+  }
+}
+
+.c-context__menu {
+  padding: 0;
+  list-style: none;
+  box-shadow: 0px 10px 20px $color-card-shaddow;
+  border-radius: 5px;
+  position: absolute;
+  right: 5px;
+  top: 35px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 150ms ease-in;
+  transform-origin: top right;
+  z-index: $zindex-dropdown;
+}
+
+.c-context__menu-item {
+  text-align: left;
+  min-width: 125px;
+  width: 100%;
+
+  &:first-child {
+    .c-context__menu-link {
+      border-radius: 5px 5px 0 0;
+    }
+  }
+
+  &:last-child {
+    .c-context__menu-link {
+      border-radius: 0 0 5px 5px;
+      border: 0;
+    }
+  }
+}
+
+.c-context__menu-link {
+  font-size: 14px;
+  font-weight: $fw-semi-bold;
+  line-height: 18px;
+  color: $color-gray;
+  background-color: $color-white;
+  text-decoration: none;
+  padding: 7px 16px;
+  display: block;
+  width: 100%;
+  outline: none;
+  cursor: pointer;
+  border: 0;
+  border-bottom: 1px solid $color-soft-white;
+
+  &:hover {
+    background-color: $color-context-item;
+    color: $color-white;
+  }
+
+  &.main {
+    border-left: 5px solid $color-context-item;
+  }
+}

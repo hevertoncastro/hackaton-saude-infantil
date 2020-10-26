@@ -1,0 +1,93 @@
+.o-title {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: $fw-regular;
+  margin: 0;
+  color: $color-black;
+
+  &.icon {
+    &:before {
+      @include icon(arrow);
+
+      display: inline-block;
+      font-size: 20px;
+      color: $color-black;
+      margin-right: 15px;
+      vertical-align: top;
+    }
+
+    &.message {
+      &:before {
+        @include icon(message);
+        font-size: 26px;
+      }
+    }
+
+    &.credit {
+      &:before {
+        @include icon(credit);
+        font-size: 26px;
+      }
+    }
+
+    &.barcode {
+      &:before {
+        @include icon(barcode);
+        font-size: 26px;
+      }
+    }
+
+    &.back-arrow {
+      &:before {
+        @include icon(back-arrow);
+        font-size: 30px;
+        color: $color-gray;
+      }
+    }
+
+    &.gray {
+      color: $color-gray;
+    }
+
+    &.spin {
+      &:before {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &.bordered {
+    border-bottom: 1px solid $color-title-border;
+    padding-bottom: 14px;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.large {
+    font-size: 32px;
+    line-height: 32px;
+  }
+
+  &.small {
+    font-size: 18px;
+    line-height: 19px;
+
+    &.icon {
+      &:before {
+        font-size: 16px;
+        margin-right: 10px;
+        color: $color-black;
+      }
+
+      &.message {
+        &:before {
+          @include icon(message);
+          font-size: 26px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+*,
+*::before,
+*::after {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+  // -webkit-user-select: none;
+  // -moz-user-select: none;
+  // user-select: none;
+}
+
+/* Reset Select */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
+}
+
+select {
+  flex: 1;
+  padding: 0 .5em;
+  cursor: pointer;
+}
+
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+html,
+body {
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  font-family: $ff-main;
+  overflow: hidden;
+}
+
+.page-enter-active, .page-leave-active {
+  opacity: 1;
+  transition: opacity 300ms;
+}
+.page-enter, .page-leave-to {
+  opacity: 0.5;
+}
+
+.sv_complete_btn {
+  display: none;
+}

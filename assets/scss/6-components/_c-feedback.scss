@@ -1,0 +1,75 @@
+.c-feedback {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  min-height: 56px;
+  width: 100%;
+  padding: 10px 25px;
+  background: $color-gray;
+  z-index: $zindex-popover;
+  box-shadow: 0px 10px 20px $color-card-shaddow;
+  transform: scaleY(0);
+  opacity: 0;
+  transition: all 100ms ease-in-out;
+  transform-origin: top;
+  text-align: center;
+  cursor: pointer;
+
+  &.c-feedback--is-visible {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  &.danger {
+    background: $gradient-danger;
+
+    .c-feedback__text {
+      &:before {
+        @include icon(cancel);
+      }
+    }
+  }
+
+  &.warning {
+    background: $gradient-warning;
+
+    .c-feedback__text {
+      &:before {
+        @include icon(danger);
+      }
+    }
+  }
+
+  &.success {
+    background: $gradient-success-dark;
+  }
+}
+
+.c-feedback__text {
+  margin: 0;
+  font-weight: $fw-semi-bold;
+  margin-left: 0;
+
+  &:before {
+    @include icon(done);
+    display: inline-block;
+    font-size: 24px;
+    color: $color-white;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+}
+
+.opened-menu {
+  .c-feedback__text {
+    margin-left: -209px;
+  }
+}
+
+@include responsive(mobile) {
+  .c-feedback {
+    padding: 20px 25px;
+  }
+}

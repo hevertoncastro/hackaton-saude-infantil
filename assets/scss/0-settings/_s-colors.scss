@@ -1,0 +1,75 @@
+// Defaults
+$color-primary: #3B6ABA;
+$color-primary-light: #46A6F7;
+
+$color-white: #fff;
+$color-black: #222222;
+$color-darkgray: #555555;
+$color-gray: #AAAAAA;
+$color-softgray: #CECECE;
+$color-lightgray: #D4D4D4;
+$color-soft-white: #f1f1f1;
+
+$color-success: #04AF23;
+$color-light-success: #69E4A6;
+$color-strong-success: #4CAF50;
+$color-warning: #F78D1E;
+$color-danger: #EE5261;
+$color-light-danger: #FF7285;
+$color-info: #0495af;
+
+// Theme
+$color-theme-dark: #394F74;
+$color-theme-soft: #415981;
+$color-theme: #3B6ABA;
+$color-theme-light: #46A6F7;
+
+// Gradients
+$gradient-success: transparent linear-gradient(180deg, #3FDA58 0%, #51ECC3 100%) 0% 0% no-repeat padding-box;
+$gradient-success-dark: transparent linear-gradient(180deg, #15c235 0%, #48d4a6 100%) 0% 0% no-repeat padding-box;
+$gradient-warning: transparent linear-gradient(180deg, #F76B1C 0%, #FAD961 100%) 0% 0% no-repeat padding-box;
+$gradient-danger: transparent linear-gradient(180deg, #F92278 0%, #E6774C 100%) 0% 0% no-repeat padding-box;
+$gradient-main: transparent linear-gradient(270deg, #F92278 0%, #E6774C 100%) 0% 0% no-repeat padding-box;
+$gradient-info: transparent linear-gradient(180deg, #415981 0%, #7089B2 100%) 0% 0% no-repeat padding-box;
+$gradient-highlight: transparent linear-gradient(270deg, #3FDA58 0%, #51ECC3 100%) 0% 0% no-repeat padding-box;
+$shimmer-gradient: linear-gradient(to right, #eff1f3 4%, #e2e2e2 25%, #eff1f3 36%);
+
+// Buttons
+$color-button-bg: #f26e2f;
+$color-button-text: $color-white;
+$color-active-button-bg: #de612c;
+$color-main-button: #EE5261;
+$color-warning-button: #F78D1E;
+$color-danger-button: #EE5261;
+$color-button-shaddow: #e5e5e5;
+$color-context-item: #EE5261;
+
+// Toggle
+$color-toggle-track: rgba(#80CBC4, 0.5);
+$color-toggle-button: #80CBC4;
+
+// Texts
+$color-menu-link: $color-lightgray;
+$color-menu-link-active: #EE5261;
+$color-title-border: $color-lightgray;
+
+// Forms
+$color-label-text: $color-darkgray;
+$color-input-text: $color-darkgray;
+$color-input-bg: $color-white;
+$color-input-border: $color-lightgray;
+$color-input-placeholder: $color-lightgray;
+$color-input-disabled-bg: #EDEFF1;
+
+// Side menu
+$color-sidebar-bg: #323C45;
+
+// Content
+$color-content-bg: #EDEFF1;
+$color-content-shaddow: #0000001A;
+
+// Header
+$color-header-bg: #FAFAFA;
+
+// Card
+$color-card-shaddow: #0000001A;
